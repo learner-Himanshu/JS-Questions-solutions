@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Fahrenheit changer</title>
+
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            height: 100%;
+        }
+        
+        .child{
+            display: flex;
+            justify-content: center;
+            padding: 10px 10px;
+        }
+        input{
+            border: none;
+            outline: none;
+            margin: 0px 0px 10px 10px;
+           padding: 5px 10px;
+           border-radius: 8px;
+           font-size: 15px;
+           text-align: center;
+        }
+
+        
+       
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <label for="value">Celsius : </label>
+            <input type="number"  oninput="celsius()" value="0" name="Celsius" id="Celsius">
+        </div>
+        <div class="child">
+            <label for="value">Fahrenheit : </label>
+            <input type="number" oninput="Fahrenheit()" value="32" name="Fahrenheit" id="Fahrenheit">
+        </div>
+    </div>
+    
+    <script>
+        
+        function celsius(){
+            const celcius = parseInt(document.getElementById("Celsius").value);
+            const Fahrenheit = document.getElementById("Fahrenheit")
+            const result = ((9/23*celcius)+32).toFixed(4);
+             Fahrenheit.value=`${result}`
+            
+            }
+        function Fahrenheit() {
+            const celcius =document.getElementById("Celsius");
+            const Fahrenheit = parseInt(document.getElementById("Fahrenheit").value)
+            const result= ((Fahrenheit-32)*5/9).toFixed(4)
+            celcius.value = result
+         }
+
+    </script>
+</body>
+</html>
